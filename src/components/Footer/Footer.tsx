@@ -2,7 +2,9 @@
 export const Footer = () => {
   return (
    <footer>
-    <nav></nav>
+    <nav className="padder">
+      <div></div>
+    </nav>
    </footer>
   )
 }

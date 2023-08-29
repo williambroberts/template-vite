@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom"
 import { ThemeButton } from "../../Theme/ThemeButton"
 import { Hamburger } from "./Hamburger"
-import React from "react"
+import React, { memo } from "react"
 import {BiMenuAltLeft} from "react-icons/bi"
-export const Header = () => {
+import {GiEagleHead} from "react-icons/gi"
+ const Header = () => {
     const [isHamburger,setIsHamburger]=React.useState<boolean>(false)
 
 
@@ -26,15 +27,20 @@ export const Header = () => {
 
         </div>
         <Hamburger isHamburger={isHamburger}
-         setIsHamburger={setIsHamburger}
+         close={close}
          />
         <nav className="padder">
             <button 
             className="hamburger__button"
             aria-label="menu"
             onClick={open}><BiMenuAltLeft/></button>
+            <NavLink 
+            className="hamburger__icon"
+            to={"/"}><GiEagleHead/></NavLink>
             <section className="sm:flex hidden items-center">
-                <NavLink to="/">Home</NavLink>
+                <NavLink 
+                className="hamburger__link"
+                to="/">Home</NavLink>
             </section>
             <ThemeButton/>
         </nav>
@@ -42,3 +48,5 @@ export const Header = () => {
     </header>
     )
 }
+
+export default memo(Header)

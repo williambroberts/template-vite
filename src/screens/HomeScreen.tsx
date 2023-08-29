@@ -1,8 +1,11 @@
 
-
 const HomeScreen = () => {
+  
   return (
-    <main className="padder">homeScreen</main>
+    <main className="padder">
+     
+
+    </main>
   )
 }
 
